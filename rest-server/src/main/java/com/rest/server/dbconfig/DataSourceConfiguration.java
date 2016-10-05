@@ -1,4 +1,4 @@
-package com.rest.server.config;
+package com.rest.server.dbconfig;
 
 import javax.sql.DataSource;
 
@@ -15,7 +15,6 @@ public class DataSourceConfiguration {
 	@Bean
 	public DataSource dataSource() {
 
-		// no need shutdown, EmbeddedDatabaseFactoryBean will take care of this
 		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
 		EmbeddedDatabase db = builder
 			.setType(EmbeddedDatabaseType.H2)

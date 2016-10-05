@@ -1,4 +1,4 @@
-package com.rest.server.service;
+package com.rest.server.entity;
 
 public class User {
 

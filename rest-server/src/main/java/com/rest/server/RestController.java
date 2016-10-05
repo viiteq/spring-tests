@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.rest.server.entity.User;
 import com.rest.server.service.RestService;
-import com.rest.server.service.User;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
@@ -34,4 +34,7 @@ public class RestController {
     public void addUser() {
         service.addUser();
     }
+	
+	
+	
 }

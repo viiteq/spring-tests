@@ -10,7 +10,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import com.rest.server.BeanController;
 import com.rest.server.RestController;
+import com.rest.server.service.BeanService;
 import com.rest.server.service.RestService;
 
 @Configuration
@@ -20,6 +22,11 @@ public class RestConfiguration {
 	@Bean
 	public RestController controller() {
 		return new RestController();
+	}
+	
+	@Bean
+	public BeanController beanController() {
+		return new BeanController();
 	}
 	
 	@Bean
@@ -34,5 +41,10 @@ public class RestConfiguration {
 	@Bean
 	public JdbcTemplate getJdbcTemplate() {
 		return new JdbcTemplate(dataSource);
+	}
+	
+	@Bean
+	public BeanService beanService() {
+		return new BeanService();
 	}
 }
