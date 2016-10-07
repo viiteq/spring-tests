@@ -20,20 +20,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-    	http
-		.authorizeRequests()
+    	http.csrf().disable()
+    		.authorizeRequests()
 			.anyRequest().authenticated()
 			.and()
 			.httpBasic()
 			.and()
-			.sessionManagement().sessionCreationPolicy( SessionCreationPolicy.STATELESS );
-//    	BasicAuthenticationEntryPoint basic = new BasicAuthenticationEntryPoint();
-//    	basic.setRealmName(REALM);
-//    	http.csrf().disable()
-//	    	.authorizeRequests()
-//	    	.antMatchers("/*").hasRole("ADMIN")
-//	    	.and().httpBasic().realmName(REALM)//.authenticationEntryPoint(basic)
-//	    	.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);//We don't need sessions to be created.
+			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
      
 }
