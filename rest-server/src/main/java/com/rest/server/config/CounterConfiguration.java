@@ -17,7 +17,8 @@ public class CounterConfiguration {
 		return new Counter(cnt++);
 	}
 	
-	@Bean("singletonCounter")
+	@Bean(name = "singletonCounter", destroyMethod = "cleanup")
+//	@Lazy
 	public Counter sCounter() {
 		return new Counter(cnt++);
 	}

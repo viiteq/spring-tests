@@ -1,5 +1,7 @@
 package com.rest.server.entity;
 
+import javax.annotation.PostConstruct;
+
 public class Counter {
 
 	private int cnt;
@@ -11,5 +13,14 @@ public class Counter {
 	
 	public int getCnt() {
 		return cnt;
+	}
+	
+	@PostConstruct
+	void init() {
+		System.out.println("initializing");
+	}
+	
+	void cleanup() {
+		System.out.println("destroying");
 	}
 }
